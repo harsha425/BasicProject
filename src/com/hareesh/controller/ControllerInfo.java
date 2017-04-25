@@ -27,14 +27,17 @@ public class ControllerInfo {
 	
 	
 	public ControllerInfo(){
+		super();
 	}
 	
 	@RequestMapping("/displayFirst.do")
 	public String displayFirst(Model model){
+		
+		System.out.println("Starting of ControllerInfo : displayFirst(Model model)");
 		PersonInfo allinfo = new PersonInfo();
 		//HttpSession session = request.getSession();
 		model.addAttribute("allInfo", allinfo);
-	
+		System.out.println("Completed ControllerInfo : displayFirst(Model model)");
 		return "PersonalInfo1";
 	}
 	@RequestMapping( "/personInfo.do")
