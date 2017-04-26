@@ -42,7 +42,7 @@ public class ControllerInfo {
 	}
 	@RequestMapping( "/personInfo.do")
 	public ModelAndView displayContactInfo(@ModelAttribute("allInfo") PersonInfo allinfo){
-		
+		System.out.println("Starting of ControllerInfo : displayContactInfo(@ModelAttribute(\"allInfo\") PersonInfo allinfo)");
 		String errors = "";
 		try{
 			bo.insertRecordPersonalInfo(allinfo);
@@ -55,9 +55,11 @@ public class ControllerInfo {
 			ModelAndView mv = new ModelAndView("PersonalInfo1");
 			mv.addObject("errors", errors);
 			//mv.addObject("result", result);
+			
 			return mv;	
 		}
 		ModelAndView mv = new ModelAndView("ContactInfo1");
+		System.out.println("Completed ControllerInfo : displayContactInfo(@ModelAttribute(\"allInfo\") PersonInfo allinfo)");
 		return mv;
 	}
 	@RequestMapping( "/contactInfo.do")
