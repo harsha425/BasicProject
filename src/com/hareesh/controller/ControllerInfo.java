@@ -64,6 +64,7 @@ public class ControllerInfo {
 	}
 	@RequestMapping( "/contactInfo.do")
 	public ModelAndView displayBankInfo(@ModelAttribute("allInfo") PersonInfo allinfo){
+		System.out.println("Starting of ControllerInfo : displayBankInfo(@ModelAttribute(\"allInfo\") PersonInfo allinfo)");
 		String errors = "";
 		try{
 			bo.insertRecordContactInfo(allinfo);
@@ -78,6 +79,7 @@ public class ControllerInfo {
 			return mv;	
 		}
 		ModelAndView mv = new ModelAndView("BankInfo1");
+		System.out.println("Completed ControllerInfo : displayBankInfo(@ModelAttribute(\"allInfo\") PersonInfo allinfo)");
 		return mv;
 	}
 	@RequestMapping(value = "/bankInfo.do")
